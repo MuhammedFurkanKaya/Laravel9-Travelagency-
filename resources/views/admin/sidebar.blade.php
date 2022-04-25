@@ -16,116 +16,59 @@
 
 
             <li>
-                <a  href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
+                <a  href="/admin"><i class="fa fa-home "></i>Dashboard</a>
             </li>
+
             <li>
-                <a href="#"><i class="fa fa-desktop "></i>UI Elements <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-shopping-cart "></i>Orders <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>Tabs & Panels</a>
+                        <a href="invoice.html"><i class="fa fa-coffee"></i>New Orders</a>
                     </li>
                     <li>
-                        <a href="notification.html"><i class="fa fa-bell "></i>Notifications</a>
+                        <a href="pricing.html"><i class="fa fa-flash "></i>Accepted Orders</a>
                     </li>
                     <li>
-                        <a href="progress.html"><i class="fa fa-circle-o "></i>Progressbars</a>
+                        <a href="component.html"><i class="fa fa-key "></i>Shipping Orders</a>
                     </li>
                     <li>
-                        <a href="buttons.html"><i class="fa fa-code "></i>Buttons</a>
+                        <a href="social.html"><i class="fa fa-send "></i>Completed Orders</a>
                     </li>
-                    <li>
-                        <a href="icons.html"><i class="fa fa-bug "></i>Icons</a>
-                    </li>
-                    <li>
-                        <a href="wizard.html"><i class="fa fa-bug "></i>Wizard</a>
-                    </li>
-                    <li>
-                        <a href="typography.html"><i class="fa fa-edit "></i>Typography</a>
-                    </li>
-                    <li>
-                        <a href="grid.html"><i class="fa fa-eyedropper "></i>Grid</a>
-                    </li>
+
+
 
 
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-yelp "></i>Extra Pages <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="invoice.html"><i class="fa fa-coffee"></i>Invoice</a>
-                    </li>
-                    <li>
-                        <a href="pricing.html"><i class="fa fa-flash "></i>Pricing</a>
-                    </li>
-                    <li>
-                        <a href="component.html"><i class="fa fa-key "></i>Components</a>
-                    </li>
-                    <li>
-                        <a href="social.html"><i class="fa fa-send "></i>Social</a>
-                    </li>
+                <a href="/admin/category"><i class="fa fa-flash "></i>Categories </a>
 
-                    <li>
-                        <a href="message-task.html"><i class="fa fa-recycle "></i>Messages & Tasks</a>
-                    </li>
-
-
-                </ul>
-            </li>
-            <li>
-                <a href="table.html"><i class="fa fa-flash "></i>Data Tables </a>
-
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-
-                    <li>
-                        <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                    </li>
-                    <li>
-                        <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                    </li>
-
-
-                </ul>
-            </li>
-            <li>
-                <a href="gallery.html"><i class="fa fa-anchor "></i>Gallery</a>
-            </li>
-            <li>
-                <a href="error.html"><i class="fa fa-bug "></i>Error Page</a>
-            </li>
-            <li>
-                <a href="login.html"><i class="fa fa-sign-in "></i>Login Page</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-sitemap "></i>Multilevel Link <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-flask "></i>Second Level Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#"><i class="fa fa-plus "></i>Third Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-comments-o "></i>Third Level Link</a>
-                            </li>
-
-                        </ul>
-
-                    </li>
-                </ul>
             </li>
 
             <li>
-                <a class="active-menu" href="blank.html"><i class="fa fa-square-o "></i>Blank Page</a>
+                <a href="/admin/product"><i class="fa fa-ticket "></i>Products</a>
+            </li>
+            <li>
+                <a href="/admin/comment"><i class="fa fa-comment-o "></i>Comments</a>
+            </li>
+            <li>
+                <a href="/admin/faq"><i class="fa fa-question "></i>FAQ</a>
+            </li>
+
+            <li>
+                <a href="/admin/messages"><i class="fa fa-mail-forward"></i>Messages</a>
+            </li>
+
+            <li>
+                <a href="/admin/user"><i class="fa fa-user "></i>Users</a>
+            </li>
+
+            <li>
+                <a href="/admin/social"><i class="fa fa-instagram "></i>Social</a>
+            </li>
+
+            <li>
+                <a class="active-menu" href="/admin/setting"><i class="fa fa-edit "></i>Settings</a>
             </li>
         </ul>
     </div>
