@@ -26,3 +26,5 @@ Route::get('/admin/category/create', [AdminPanelCategoryController::class, 'crea
 Route::post('/admin/category/store', [AdminPanelCategoryController::class, 'store'])->name('admin_category_store');
 Route::get('/admin/category/edit/{id}', [AdminPanelCategoryController::class, 'edit'])->name('admin_category_edit');
 Route::post('/admin/category/update/{id}', [AdminPanelCategoryController::class, 'update'])->name('admin_category_update');
+Route::get('/admin/category/destroy/{id}', [AdminPanelCategoryController::class, 'destroy'])->name('admin_category_destroy');
+Route::get('/admin/category/show/{id}', [AdminPanelCategoryController::class, 'show'])->name('admin_category_show');
