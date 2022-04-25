@@ -20,7 +20,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-shopping-cart "></i>Orders <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-shopping-cart "></i>Order <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="invoice.html"><i class="fa fa-coffee"></i>New Orders</a>
