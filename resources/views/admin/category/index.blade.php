@@ -8,8 +8,8 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="/admin/category/create" class="btn btn-lg btn-success">Add Category</a>
-                    <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+                    <a href="{{route('admin.category.create')}}" class="btn btn-lg btn-success">Add Category</a>
+
 
                 </div>
             </div>
@@ -43,9 +43,9 @@
                                 <td>{{$rs->description}}</td>
                                 <td>{{$rs->image}}</td>
                                 <td>{{$rs->status}}</td>
-                                <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-sm btn-info">Edit</a> </td>
-                                <td><a href="/admin/category/delete/{{$rs->id}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
-                                <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-sm btn-success">Show</a> </td>
+                                <td><a href="{{route('admin.category.edit' ,['id'=>$rs->id])}}" class="btn btn-sm btn-info">Edit</a> </td>
+                                <td><a href="{{route('admin.category.destroy' ,['id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
+                                <td><a href="{{route('admin.category.show' ,['id'=>$rs->id])}}" class="btn btn-sm btn-success">Show</a> </td>
 
                             </tr>
 

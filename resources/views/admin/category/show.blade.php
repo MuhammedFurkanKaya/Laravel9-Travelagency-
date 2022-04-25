@@ -8,9 +8,9 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="/admin/category/edit/{{$data->id}}" class="btn btn-lg btn-success">Edit</a>
-                    <a href="/admin/category/destroy/{{$data->id}}" onclick="return confirm('Deleting! Are You Sure?')" class="btn btn-lg btn-success">Delete</a>
-                    <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+                    <a href="{{route('admin.category.edit', ['id'=>$data->id])}}" class="btn btn-lg btn-success">Edit</a>
+                    <a href="{{route('admin.category.destroy', ['id'=>$data->id])}}" onclick="return confirm('Deleting! Are You Sure?')" class="btn btn-lg btn-success">Delete</a>
+
 
                 </div>
             </div>
