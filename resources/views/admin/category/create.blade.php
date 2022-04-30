@@ -19,7 +19,7 @@
                     Category Elements
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="{{route('admin.category.create')}}" method="post">
+                    <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Title</label>
@@ -34,13 +34,14 @@
                         <div class="form-group">
                             <label>Description</label>
                             <input class="form-control" type="text" name="description" placeholder="Description">
-                            <p class="help-block">Help text here.</p>
+
                         </div>
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input class="form-control" type="text" name="title" placeholder="Title">
-                            <p class="help-block">Help text here.</p>
-                        </div>
+                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <label style="height:33px  ;border-style:solid;background-color:beige; border: 2px solid bisque; border-radius: 8px; padding: 5px;">Choose Image</label>
+                            <input type="file" name="image" class="file-u   pload-default" style="text-align: center; height:35px  ;border-style:solid;background-color:gainsboro; border: 2px solid gainsboro; border-radius: 8px; padding: 5px;"   >
+
+                            </div>
+
                         <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status">
