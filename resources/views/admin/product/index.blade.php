@@ -51,7 +51,11 @@
                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px" >
                                         @endif
                                     </td>
-                                    <td><img src="{{asset('assets')}}/assets/img/gallery.png" style="height: 40px" ></td>
+                                    <td> <a href="{{route('admin.image.index' ,['pid'=>$rs->id])}}"
+                                        onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                        <img src="{{asset('assets')}}/assets/img/gallery.png" style="height: 40px" >
+                                        </a>
+                                    </td>
                                     <td>{{$rs->status}}</td>
                                     <td><a href="{{route('admin.product.edit' ,['id'=>$rs->id])}}" class="btn btn-sm btn-info">Edit</a> </td>
                                     <td><a href="{{route('admin.product.destroy' ,['id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
