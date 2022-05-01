@@ -29,6 +29,7 @@
                                 <th>Price</th>
                                 <th>Day</th>
                                 <th>Image</th>
+                                <th>Image Gallery</th>
                                 <th>Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -50,6 +51,7 @@
                                             <img src="{{Storage::url($rs->image)}}" style="height: 40px" >
                                         @endif
                                     </td>
+                                    <td><img src="{{asset('assets')}}/assets/img/gallery.png" style="height: 40px" ></td>
                                     <td>{{$rs->status}}</td>
                                     <td><a href="{{route('admin.product.edit' ,['id'=>$rs->id])}}" class="btn btn-sm btn-info">Edit</a> </td>
                                     <td><a href="{{route('admin.product.destroy' ,['id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
