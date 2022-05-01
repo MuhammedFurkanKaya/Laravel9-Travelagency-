@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanelHomeController;
+use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanelCategoryController;
@@ -31,4 +32,15 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
          Route::get('/destroy/{id}','destroy')->name('destroy');
          Route::get('/show/{id}','show')->name('show');
       });
+
+    //*********************** ADMİN PRODUCT ROUTES ************************
+    Route::prefix('/product')->name('product.')->controller(AdminProductController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
+    });
 });
