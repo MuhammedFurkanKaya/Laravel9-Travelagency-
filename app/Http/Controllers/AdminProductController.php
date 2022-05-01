@@ -137,7 +137,7 @@ class AdminProductController extends Controller
     {
         //
         $data=Product::find($id);
-        if (Storage::exists($data->image)) {
+        if ($data->image && Storage::disk('public')->exists($data->image)) {
             Storage::delete($data->image);
         }
 
