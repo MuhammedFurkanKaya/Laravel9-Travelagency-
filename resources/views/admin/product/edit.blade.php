@@ -1,8 +1,10 @@
 @extends('layouts.adminbase')
 
 @section('title','Edit Product : '.$data->title)
-
-
+@section('head')
+    <!--  include summernote css/js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css">
+@endsection
 @section('content')
     <div id="page-wrapper">
         <div id="page-inner">
@@ -68,7 +70,7 @@
 
                         <div class="form-group">
                             <label>Detail Inf</label>
-                            <textarea class="form-control" name="detail">
+                            <textarea class="form-control" id="detail" name="detail">
                                 {{$data->detail}}"
                             </textarea>
 
@@ -101,4 +103,13 @@
         <!-- /. PAGE INNER  -->
     </div>
 
+@endsection
+@section('foot')
+            <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+            <script>
+                $(function (){
+                    //Summernote
+                    $('.textarea').summernote()
+                })
+            </script>
 @endsection
