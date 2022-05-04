@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="our-listing owl-carousel">
-                @foreach($sliderdata as $rs)
+                @foreach($productlist1 as $rs)
                 <div class="list-item">
                     <div class="list-thumb">
                         <div class="title">
@@ -21,7 +21,7 @@
                     <div class="list-content">
                         <h5>Rome, Milan, Naples</h5>
                         <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
-                        <a href="#" class="price-btn">{{$rs->price}}</a>
+                        <a href="{{route('product',['id'=>$rs->id])}}" class="price-btn">{{$rs->price}}</a>
                     </div> <!-- /.list-content -->
                 </div> <!-- /.list-item -->
 

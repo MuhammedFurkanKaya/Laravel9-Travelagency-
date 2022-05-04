@@ -1,4 +1,6 @@
+
 <div class="flexslider">
+
     <ul class="slides">
         @foreach($sliderdata as $rs)
         <li>
@@ -16,7 +18,7 @@
                                 <span class="blue">template</span><span class="green">mo</span> website.
                                 All images used in this template are from
                                 <a rel="nofollow" href="http://unsplash.com" target="_parent">Unsplash</a>.</p>
-                            <a href="#" class="slider-btn">Pre-booking</a>
+                            <a href="{{route('product',['id'=>$rs->id])}}" class="slider-btn">Rezervasyon</a>
                         </div>
                     </div>
 
@@ -27,4 +29,5 @@
 
         @endforeach
     </ul>
+
 </div> <!-- /.flexslider -->

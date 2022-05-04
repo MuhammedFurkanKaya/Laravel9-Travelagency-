@@ -16,6 +16,8 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+'])->name('test');
 
+Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
