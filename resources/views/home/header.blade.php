@@ -12,11 +12,12 @@
                 <div class="col-md-8 col-sm-6 col-xs-2">
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="{{route('home')}}">Home</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="events.html">Events</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{route('about')}}">About</a></li>
+                            <li><a href="{{route('contact')}}">Contact</a></li>
+                            <li><a href="{{route('references')}}">References</a></li>
                         </ul>
                         <a href="#" class="toggle-menu visible-sm visible-xs">
                             <i class="fa fa-bars"></i>
@@ -29,11 +30,12 @@
             <div class="col-md-12 visible-sm visible-xs">
                 <div class="menu-responsive">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="{{route('home')}}">Home</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="events.html">Events</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
                     </ul>
                 </div> <!-- /.menu-responsive -->
             </div> <!-- /.col-md-12 -->
