@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>@yield("title")</title>
-    <meta name="description" content="">
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="Muhammed Furkan Kaya">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
     <!--
     Travel Template
     http://www.templatemo.com/tm-409-travel

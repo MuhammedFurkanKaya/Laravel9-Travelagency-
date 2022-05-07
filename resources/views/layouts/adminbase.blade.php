@@ -6,13 +6,11 @@
     <title>@yield("title")</title>
 
     <!-- BOOTSTRAP STYLES-->
-    <link href="/assets/assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLES-->
-    <link href="/assets/assets/css/font-awesome.css" rel="stylesheet" />
-    <!--CUSTOM BASIC STYLES-->
-    <link href="/assets/assets/css/basic.css" rel="stylesheet" />
-    <!--CUSTOM MAIN STYLES-->
-    <link href="/assets/assets/css/custom.css" rel="stylesheet" />
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/basic.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/custom.css')}}" rel="stylesheet" />
+
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -31,16 +29,17 @@
 @yield('content')
 
 
-
-<@include("admin.footer")
+<script src="{{asset('js/jquery-1.10.2.js')}}"></script>
+<script src="{{asset('js/bootstrap.js')}}"></script>
+<script src="{{asset('js/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('js/wizard/jquery.steps.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+@include("admin.footer")
 @yield('foot')
 
-<script src="/assets/assets/js/jquery-1.10.2.js"></script>
-<!-- BOOTSTRAP SCRIPTS -->
-<script src="/assets/assets/js/bootstrap.js"></script>
-<!-- METISMENU SCRIPTS -->
-<script src="/assets/assets/js/jquery.metisMenu.js"></script>
-<!-- CUSTOM SCRIPTS -->
-<script src="/assets/assets/js/custom.js"></script>
+
+
+ <!--asset fonksiyonunu araştır mutlaka. ve bu şekilde kullan her zaman
+ çünkü bu projeyi başka bir alt dizinde çalıştırınca bulması için-->
 </body>
 </html>
