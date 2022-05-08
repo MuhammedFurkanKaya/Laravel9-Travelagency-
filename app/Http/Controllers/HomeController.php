@@ -36,10 +36,9 @@ class HomeController extends Controller
 
     public function references()
     {
-        echo "references";
-        exit();
+
         $setting= Setting::first();
-        return view('home.index',[
+        return view('home.references',[
             'setting'=>$setting,
 
         ]);
@@ -47,10 +46,9 @@ class HomeController extends Controller
 
     public function contact()
     {
-        echo "contact";
-        exit();
+
         $setting= Setting::first();
-        return view('home.index',[
+        return view('home.contact',[
             'setting'=>$setting,
 
         ]);
