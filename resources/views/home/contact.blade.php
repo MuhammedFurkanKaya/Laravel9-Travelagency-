@@ -51,18 +51,23 @@
                             <div class="col-md-5 col-sm-6">
                                 <h3 class="widget-title">Contacts Form</h3>
                                 <div class="contact-form">
-                                    <form name="contactform" id="contactform" action="#" method="post">
+                                    <form name="contactform" id="contactform" action="{{route("storemessage")}}" method="post">
+                                        @csrf
                                         <p>
-                                            <input name="first-name" type="text" placeholder="First Name">
+                                            <input name="name" type="text" placeholder="Name & Surname">
                                         </p>
                                         <p>
-                                            <input name="last-name" type="text" placeholder="Last Name">
+                                            <input name="phone" type="tel"  placeholder="Phone Number">
                                         </p>
+
                                         <p>
                                             <input name="email" type="email"  placeholder="Email">
                                         </p>
                                         <p>
-                                            <input name="tel" type="tel"  placeholder="Telephone">
+                                            <input name="subject" type="text" placeholder="Subject">
+                                        </p>
+                                        <p>
+                                            <textarea  name="message" type="text" placeholder="Your Message"></textarea>
                                         </p>
 
                                         <input type="submit" class="mainBtn" id="submit" value="Send Message">
