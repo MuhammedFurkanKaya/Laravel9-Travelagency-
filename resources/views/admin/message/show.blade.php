@@ -4,7 +4,7 @@
 
 
 @section('content')
-    <div id="page-wrapper">
+
         <div id="page-inner">
             <div class="row">
 
@@ -27,8 +27,6 @@
                                     <td>{{$data->id}}</td>
 
                                 </tr>
-
-
 
                                 <tr>
                                     <th>Name & Surname</th>
@@ -84,6 +82,18 @@
 
                                 </tr>
 
+                                <tr>
+                                <th>Admin Note: </th>
+                                <td>
+                                    <form role="form" action="{{route('admin.message.update' ,['id'=>$data->id])}}" method="post" >
+                                  @csrf
+                                    <textarea class="form-control" cols="100" id="note" name="note">{{$data->note}}</textarea>
+                                        <button type="submit" class="btn btn-info">Update Note </button>
+                                    </form>
+                                </td>
+
+                                </tr>
+
                             </table>
                         </div>
                     </div>
@@ -91,6 +101,6 @@
                 <!--  end  Context Classes  -->
             </div>
         <!-- /. PAGE INNER  -->
-    </div>
+
 
 @endsection

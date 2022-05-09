@@ -29,8 +29,8 @@
                                 <th>Subject</th>
                                 <th>Day</th>
                                 <th>Status</th>
-                                <th>Delete</th>
                                 <th>Show</th>
+                                <th>Delete</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,7 @@
                                     <td>{{$rs->status}}</td>
 
                                     <td>
-                                        <a href="{{route('admin.message.show' ,['id'=>$rs->id])}}"
+                                        <a href="{{route('admin.message.show' ,['id'=>$rs->id])}}" class="btn btn-sm btn-success"
                                            onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
                                           Show
                                         </a>
