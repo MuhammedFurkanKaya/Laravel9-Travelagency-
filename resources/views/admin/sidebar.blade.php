@@ -56,7 +56,7 @@
             </li>
 
             <li>
-                <a href="/admin/messages"><i class="fa fa-mail-forward"></i>Messages</a>
+                <a href="{{route('admin.message.index')}}"><i class="fa fa-mail-forward"></i>Messages</a>
             </li>
 
             <li>

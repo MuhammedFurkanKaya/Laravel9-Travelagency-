@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanelHomeController;
+use App\Http\Controllers\AdminPanelMessageController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -65,6 +66,15 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
         Route::get('/{pid}','index')->name('index');
         Route::post('/store/{pid}','store')->name('store');
         Route::get('/destroy/{pid}/{id}','destroy')->name('destroy');
+
+    });
+
+    //*********************** ADMİN MESSAGE ROUTES ************************
+    Route::prefix('/message')->name('message.')->controller(AdminPanelMessageController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
 
     });
 });

@@ -51,6 +51,7 @@
                             <div class="col-md-5 col-sm-6">
                                 <h3 class="widget-title">Contacts Form</h3>
                                 <div class="contact-form">
+                                    @include('home.messages')
                                     <form name="contactform" id="contactform" action="{{route("storemessage")}}" method="post">
                                         @csrf
                                         <p>
