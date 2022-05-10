@@ -13,11 +13,12 @@
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
                             <li class="active"><a href="{{route('home')}}">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
+
                             <li><a href="events.html">Events</a></li>
                             <li><a href="{{route('about')}}">About</a></li>
                             <li><a href="{{route('contact')}}">Contact</a></li>
                             <li><a href="{{route('references')}}">References</a></li>
+                            <li><a href="{{route('faq')}}">FAQ</a></li>
                         </ul>
                         <a href="#" class="toggle-menu visible-sm visible-xs">
                             <i class="fa fa-bars"></i>
@@ -31,11 +32,11 @@
                 <div class="menu-responsive">
                     <ul>
                         <li class="active"><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
                         <li><a href="events.html">Events</a></li>
                         <li><a href="{{route('about')}}">About</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
                         <li><a href="{{route('references')}}">References</a></li>
+                        <li><a href="{{route('faq')}}">FAQ</a></li>
                     </ul>
                 </div> <!-- /.menu-responsive -->
             </div> <!-- /.col-md-12 -->

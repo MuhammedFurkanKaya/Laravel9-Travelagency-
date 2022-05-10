@@ -52,7 +52,7 @@
                 <a href="/admin/comment"><i class="fa fa-comment-o "></i>Comments</a>
             </li>
             <li>
-                <a href="/admin/faq"><i class="fa fa-question "></i>FAQ</a>
+                <a href="{{route('admin.faq.index')}}"><i class="fa fa-question "></i>FAQ</a>
             </li>
 
             <li>
