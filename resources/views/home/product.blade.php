@@ -27,6 +27,7 @@
                                 <i class="fa fa-trophy"></i>
                             </div> <!-- /.service-icon -->
                             <div class="service-content">
+                                @include('home.messages')
                                 <h4>{{$data->title}}</h4>
                                 <p>{{$data->description}}</p>
                             </div> <!-- /.service-content -->
@@ -39,7 +40,7 @@
 
                 </div><!-- /.col-md-4 -->
 
-            <div class="container">
+            <div class="container" style="margin-top: 50px">
                 <div class="row">
                     <div class="our-listing owl-carousel">
                         <div class="list-item">
@@ -115,7 +116,55 @@
                     </div>
                 </div>
 
+        @foreach($reviews as $rs)
+            <div class="single-review">
+                <div class="review-heading">
+                    <div><a href="#"><i class="fa fa-user"></i>{{$rs->user->name}}</a></div>
+                    <div><a href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}}</a></div>
+                    <div class="review-rating ">
+                        <i class="fa fa-star- @if ($rs->rate<1)-o @endif "></i>
+                        <i class="fa fa-star @if ($rs->rate<2)-o  @endif "></i>
+                        <i class="fa fa-star @if ($rs->rate<3)-o  @endif "></i>
+                        <i class="fa fa-star @if ($rs->rate<4)-o  @endif "></i>
+                        <i class="fa fa-star @if ($rs->rate<5)-o  @endif "></i>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <strong>{{$rs->subject}}</strong>
+                    <p>{{$rs->review}}</p>
+                </div>
+            </div>
+        @endforeach
+        <form class="review-form" action="{{route("storecomment")}}" method="post">
+            @csrf
+            <input class="input-append" type="hidden" name="product_id" value="{{$data->id}}">
+            <p>
+                <input class="input-append" type="text" name="subject" placeholder="Subject">
+            </p>
 
+            <p>
+                <textarea  class="input-append" name="review" placeholder="Your Review"></textarea>
+            </p>
+
+            <div>
+                <div class="input-append">
+                    <strong class="text-uppercase">Your Raiting: </strong>
+                </div>
+                <div class="fa-star-o">
+
+                    <input type="radio" id="star5" name="rate" value="5"> <label for="star5"></label>
+                    <input type="radio" id="star4" name="rate" value="4"> <label for="star4"></label>
+                    <input type="radio" id="star3" name="rate" value="3"> <label for="star3"></label>
+                    <input type="radio" id="star2" name="rate" value="2"> <label for="star2"></label>
+                    <input type="radio" id="star1" name="rate" value="1"> <label for="star1"></label>
+                </div>
+            </div>
+            @auth
+                <input type="submit" class="mainBtn" id="submit" value="Send Message">
+            @else
+                <a href="/login" class="btn-primary">For Submit Your Review, Please Login </a>
+            @endauth
+        </form>
 
 
 

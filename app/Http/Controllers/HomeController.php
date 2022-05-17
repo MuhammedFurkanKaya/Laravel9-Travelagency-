@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -82,15 +84,32 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','Your message has been sent, Thank You.');
     }
 
+    public function storecomment(Request $request)
+    {
+         //dd($request); //Check your values
+        $data= new Comment();
+        $data->user_id= Auth::id(); //Logged in user id
+        $data->product_id= $request->input('product_id');
+        $data->subject= $request->input('subject');
+        $data->review= $request->input('review');
+        $data->rate= $request->input('rate');
+        $data->ip=request()->ip();
+        $data->save();
+
+        return redirect()->route('product',['id'=>$request->input('product_id')])->with('success','Your comment has been sent, Thank You.');
+    }
+
 
     public function product($id)
     {
 
         $data= Product::find($id);
         $images= DB::table('images')->where('product_id',$id)->get();
+        $reviews=Comment::where('product_id',$id)->where('status','True')->get();
         return view('home.product',[
             'data'=>$data,
-            'images'=>$images
+            'images'=>$images,
+            'reviews'=>$reviews
         ]);
     }
     public function test($id,$name)

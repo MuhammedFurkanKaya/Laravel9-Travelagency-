@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AdminPanelFaqController;
 use App\Http\Controllers\AdminPanelHomeController;
 use App\Http\Controllers\AdminPanelMessageController;
@@ -21,7 +22,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
-
+Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
 
 
 
@@ -88,5 +89,14 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
         Route::get('/show/{id}','show')->name('show');
+    });
+
+    //*********************** ADMİN COMMENT ROUTES ************************
+    Route::prefix('/comment')->name('comment.')->controller(AdminCommentController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
     });
 });
