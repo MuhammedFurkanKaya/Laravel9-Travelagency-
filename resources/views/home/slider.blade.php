@@ -6,7 +6,7 @@
         <li>
 
             <div class="overlay"></div>
-            <img src="{{Storage::url($rs->image)}}" style="width: 1600px; height: 780px">
+            <img src="{{Storage::url($rs->image)}}" style="width: 100%; height: 780px">
             <div class="container">
                 <div class="row">
 
