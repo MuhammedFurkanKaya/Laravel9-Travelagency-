@@ -3,12 +3,12 @@
         <ul class="nav" id="main-menu">
             <li>
                 <div class="user-img-div">
-                    <img src="assets/img/user.png" class="img-thumbnail" />
+                    <img src="{{asset('assets')}}/assets/img/user.png" class="img-thumbnail" />
 
                     <div class="inner-text">
-                        Jhon Deo Alex
+                        {{\Illuminate\Support\Facades\Auth::user()->name}}
                         <br />
-                        <small>Last Login : 2 Weeks Ago </small>
+                        <a href="/logoutuser" class="text-uppercase" style="color: black">Logout</a>
                     </div>
                 </div>
 
