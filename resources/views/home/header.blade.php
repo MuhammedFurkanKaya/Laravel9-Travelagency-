@@ -23,6 +23,18 @@
                         <a href="#" class="toggle-menu visible-sm visible-xs">
                             <i class="fa fa-bars"></i>
                         </a>
+                        @auth()
+                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <strong class="text-uppercase">{{Auth::user()->name}} <i class="fa fa-caret-down"></i></strong>
+                        </div>
+                            <a href="/logoutuser" class="text-uppercase">Logout</a>
+                        @endauth
+                        @guest
+                        <a href="/loginuser" class="text-uppercase">Login</a> / <a href="/registeruser" class="text-uppercase">Join</a>
+                        @endguest
                     </div> <!-- /.main-menu -->
                 </div> <!-- /.col-md-8 -->
             </div> <!-- /.row -->
