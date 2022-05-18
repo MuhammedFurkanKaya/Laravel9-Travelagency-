@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AdminPanelFaqController;
 use App\Http\Controllers\AdminPanelHomeController;
 use App\Http\Controllers\AdminPanelMessageController;
+use App\Http\Controllers\AdminPanelUserController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -110,5 +111,16 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
 
+    });
+
+    //*********************** ADMİN USER ROUTES ************************
+    Route::prefix('/user')->name('user.')->controller(AdminPanelUserController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/edit/{id}','show')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::post('/addrole/{id}','addrole')->name('addrole');
+        Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
     });
 });
