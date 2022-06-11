@@ -29,12 +29,22 @@
                                 <i class="fa fa-user"></i>
                             </div>
                             <strong class="text-uppercase">{{Auth::user()->name}} <i class="fa fa-caret-down"></i></strong>
+
                         </div>
                             <a href="/logoutuser" class="text-uppercase">Logout</a>
                         @endauth
                         @guest
                         <a href="/loginuser" class="text-uppercase">Login</a> / <a href="/registeruser" class="text-uppercase">Join</a>
                         @endguest
+                        <ul class="dropdown-menu">
+                            <li><a href="{{route('userpanel.index')}}"><i class="fa fa-user-o"></i>My Account</a></li>
+                            <li><a href="#"><i class="fa fa-heart-o"></i>My Wishlist</a></li>
+                            <li><a href="#"><i class="fa fa-exchange"></i>My Compare</a></li>
+                            <li><a href="#"><i class="fa fa-check"></i>Checkout</a></li>
+                            <li><a href="#"><i class="fa fa-unlock-alt"></i>Login</a></li>
+                            <li><a href="/logout"><i class="fa fa-user-plus"></i>Create an Account</a></li>
+                        </ul>
+
                     </div> <!-- /.main-menu -->
                 </div> <!-- /.col-md-8 -->
             </div> <!-- /.row -->
@@ -55,5 +65,5 @@
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </div> <!-- /.site-header -->
-
+<!--<a href="/">My Account</a> -->
 

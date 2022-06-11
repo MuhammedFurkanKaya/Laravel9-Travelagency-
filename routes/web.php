@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanelMessageController;
 use App\Http\Controllers\AdminPanelUserController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanelCategoryController;
 use App\Http\Controllers\AdminPanelImageController;
@@ -47,6 +48,14 @@ Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//*********************** USER AUTH CONTROL ************************
+Route::middleware('auth')->group(function (){
+//*********************** USER ROUTES ************************
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
+
+        Route::get('/', 'index')->name('index');
+    });
 
 //*********************** ADMİN PANEL ROUTES ************************
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
@@ -123,4 +132,5 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
         Route::post('/addrole/{id}','addrole')->name('addrole');
         Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
     });
+});
 });
