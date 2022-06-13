@@ -1,13 +1,13 @@
 @extends('layouts.adminwindow')
 
-@section('title','Product Image Gallery')
+@section('title','Packages Image Gallery')
 
 
 @section('content')
 
-    <h3>{{$product->title}}</h3>
+    <h3>{{$packages->title}}</h3>
     <hr>
-    <form role="form" action="{{route('admin.image.store',['pid'=>$product->id])}}" method="post" enctype="multipart/form-data">
+    <form role="form" action="{{route('admin.image.store',['pid'=>$packages->id])}}" method="post" enctype="multipart/form-data">
         @csrf
 
 
@@ -37,7 +37,7 @@
             <!-- /. ROW  -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Product Image List
+                    Packages Image List
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -66,7 +66,7 @@
                                         @endif
                                     </td>
 
-                                    <td><a href="{{route('admin.image.destroy' ,['pid'=>$product->id,'id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
+                                    <td><a href="{{route('admin.image.destroy' ,['pid'=>$packages->id,'id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
 
 
                                 </tr>

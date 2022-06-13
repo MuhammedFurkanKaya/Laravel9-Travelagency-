@@ -46,7 +46,7 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Product</th>
+                                            <th>Packages</th>
                                             <th>Subject</th>
                                             <th>Review</th>
                                             <th>Rate</th>
@@ -58,7 +58,7 @@
                                         @foreach( $comments as $rs)
                                             <tr>
                                                 <td>{{$rs->id}}</td>
-                                                <td><a href="{{route('product',['id'=>$rs->product_id])}}">{{$rs->product->title}}</a></td>
+                                                <td><a href="{{route('packages',['id'=>$rs->packages_id])}}">{{$rs->packages->title}}</a></td>
                                                 <td>{{$rs->subject}}</td>
                                                 <td>{{$rs->review}}</td>
                                                 <td>{{$rs->rate}}</td>

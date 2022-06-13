@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Show Product : '.$data->title)
+@section('title','Show Packages : '.$data->title)
 
 
 @section('content')
@@ -8,8 +8,8 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('admin.product.edit', ['id'=>$data->id])}}" class="btn btn-lg btn-success">Edit</a>
-                    <a href="{{route('admin.product.destroy', ['id'=>$data->id])}}" onclick="return confirm('Deleting! Are You Sure?')" class="btn btn-lg btn-success">Delete</a>
+                    <a href="{{route('admin.packages.edit', ['id'=>$data->id])}}" class="btn btn-lg btn-success">Edit</a>
+                    <a href="{{route('admin.packages.destroy', ['id'=>$data->id])}}" onclick="return confirm('Deleting! Are You Sure?')" class="btn btn-lg btn-success">Delete</a>
 
 
                 </div>

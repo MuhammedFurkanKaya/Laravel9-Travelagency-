@@ -1,20 +1,87 @@
+<!--<link rel="stylesheet" type="text/css" href="{{ url('menuubar.css') }}" /> -->
+<style>
+    .dropdown-menu-custom {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: #fff;
+        transition: all 300ms;
+        transform: scale(0);
+    }
+
+    .dropdown-menu-custom li {
+        padding: 20px 10px;
+        width: 150px;
+        transition: all 300ms;
+    }
+
+    .dropdown-menu-custom li:hover {
+        background: #9ed034;
+    }
+
+    .dropdown-menu-custom li:hover .dropdown-item-custom {
+        color: #fff;
+    }
+
+    .dropdown-item-custom {
+        width: 100%;
+        line-height: 16px !important;
+        transition: all 300ms;
+    }
+
+    .open-dropdown {
+        position: relative;
+    }
+
+    .open-dropdown:hover .dropdown-menu-custom {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+</style>
+
+
+
+
 <div class="site-header">
     <div class="container">
         <div class="main-header">
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-10">
                     <div class="logo">
-                        <a href="#">
+                        <a href="http://127.0.0.1:8000/">
                             <img src="{{asset('assets')}}/images/logo.png" alt="travel html5 template" title="travel html5 template">
                         </a>
                     </div> <!-- /.logo -->
                 </div> <!-- /.col-md-4 -->
+
                 <div class="col-md-8 col-sm-6 col-xs-2">
                     <div class="main-menu">
                         <ul class="visible-lg visible-md">
                             <li class="active"><a href="{{route('home')}}">Home</a></li>
 
-                            <li><a href="events.html">Events</a></li>
+                            <li class="open-dropdown">
+                                <a href="#">Tour</a>
+                                <ul class="dropdown-menu-custom">
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/1">Historical Places</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/2">Balkan Trip</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/3">Mediterranean Tour</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/4">Blue Tour</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/5">Ski Tour</a></li>
+                                </ul>
+                            </li>
+                            <li class="open-dropdown">
+                                <a href="#">Ticket</a>
+                                <ul class="dropdown-menu-custom">
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/6">Flight Ticket</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/7">Bus Ticket</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/8">Train Ticket</a></li>
+                                    <li><a class="dropdown-item-custom" href="http://127.0.0.1:8000/packages/9">Ship Ticket</a></li>
+                                </ul>
+                            </li>
                             <li><a href="{{route('about')}}">About</a></li>
                             <li><a href="{{route('contact')}}">Contact</a></li>
                             <li><a href="{{route('references')}}">References</a></li>

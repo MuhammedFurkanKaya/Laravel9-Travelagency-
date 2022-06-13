@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminPanelFaqController;
 use App\Http\Controllers\AdminPanelHomeController;
 use App\Http\Controllers\AdminPanelMessageController;
 use App\Http\Controllers\AdminPanelUserController;
-use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\AdminPackagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +43,7 @@ Route::get('/test',[HomeController::class, 'test'])->name('test');
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+'])->name('test');
 
-Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
+Route::get('/packages/{id}',[HomeController::class,'packages'])->name('packages');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -76,8 +76,8 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
          Route::get('/show/{id}','show')->name('show');
       });
 
-    //*********************** ADMİN PRODUCT ROUTES ************************
-    Route::prefix('/product')->name('product.')->controller(AdminProductController::class)->group(function () {
+    //*********************** ADMİN PACKAGES ROUTES ************************
+    Route::prefix('/packages')->name('packages.')->controller(AdminPackagesController::class)->group(function () {
         Route::get('/','index')->name('index');
         Route::get('/create','create')->name('create');
         Route::post('/store','store')->name('store');
@@ -87,7 +87,7 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
         Route::get('/show/{id}','show')->name('show');
     });
 
-    //*********************** ADMİN PRODUCT IMAGE GALLERY ROUTES ************************
+    //*********************** ADMİN PACKAGES IMAGE GALLERY ROUTES ************************
     Route::prefix('/image')->name('image.')->controller(AdminPanelImageController::class)->group(function () {
         Route::get('/{pid}','index')->name('index');
         Route::post('/store/{pid}','store')->name('store');

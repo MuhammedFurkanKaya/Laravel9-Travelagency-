@@ -51,8 +51,6 @@
                             </div>
                        <!-- /.list-thumb -->
                             <div class="list-content">
-                                <h5>Rome, Milan, Naples</h5>
-                                <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
                                 <a href="#" class="price-btn">{{$data->price}}</a>
                             </div>
                      <!-- /.list-content -->
@@ -81,8 +79,6 @@
                                 <img src="{{Storage::url($rs->image)}}" style="width: 270px; height: 200px">
                             </div> <!-- /.list-thumb -->
                             <div class="list-content">
-                                <h5>Rome, Milan, Naples</h5>
-                                <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
 
                             </div> <!-- /.list-content -->
                         </div> <!-- /.list-item -->
@@ -149,7 +145,7 @@
         <div class="col-md-6">
         <form class="review-form" action="{{route("storecomment")}}" method="post">
             @csrf
-            <input class="input-append" type="hidden" name="product_id" value="{{$data->id}}">
+            <input class="input-append" type="hidden" name="packages_id" value="{{$data->id}}">
             <p>
                 <input class="input-append" type="text" name="subject" placeholder="Subject" style="width: 100%">
             </p>

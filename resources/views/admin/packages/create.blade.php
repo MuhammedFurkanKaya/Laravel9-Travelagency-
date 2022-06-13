@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Add Product')
+@section('title','Add Packages')
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 @endsection
@@ -10,7 +10,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Add Product</h1>
+                    <h1 class="page-head-line">Add Packages</h1>
                     <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
 
                 </div>
@@ -18,13 +18,13 @@
             <!-- /. ROW  -->
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Product Elements
+                    Packages Elements
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('admin.packages.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Parent Product</label>
+                            <label>Parent Packages</label>
                             <select class="form-control select2" name="category_id" >
                                 @foreach($data as $rs)
                                     <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanelCategoryController::getParentsTree($rs,$rs->title)}}</option>

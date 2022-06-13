@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Product List')
+@section('title','Packages List')
 
 
 @section('content')
@@ -8,7 +8,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('admin.product.create')}}" class="btn btn-lg btn-success">Add Product</a>
+                    <a href="{{route('admin.packages.create')}}" class="btn btn-lg btn-success">Add Packages</a>
 
 
                 </div>
@@ -16,7 +16,7 @@
             <!-- /. ROW  -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Product List
+                    Packages List
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -57,9 +57,9 @@
                                         </a>
                                     </td>
                                     <td>{{$rs->status}}</td>
-                                    <td><a href="{{route('admin.product.edit' ,['id'=>$rs->id])}}" class="btn btn-sm btn-info">Edit</a> </td>
-                                    <td><a href="{{route('admin.product.destroy' ,['id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
-                                    <td><a href="{{route('admin.product.show' ,['id'=>$rs->id])}}" class="btn btn-sm btn-success">Show</a> </td>
+                                    <td><a href="{{route('admin.packages.edit' ,['id'=>$rs->id])}}" class="btn btn-sm btn-info">Edit</a> </td>
+                                    <td><a href="{{route('admin.packages.destroy' ,['id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>
+                                    <td><a href="{{route('admin.packages.show' ,['id'=>$rs->id])}}" class="btn btn-sm btn-success">Show</a> </td>
 
                                 </tr>
 

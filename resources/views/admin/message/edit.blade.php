@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title','Edit Product : '.$data->title)
+@section('title','Edit Packages : '.$data->title)
 @section('head')
     <!--  include summernote css/js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css">
@@ -10,7 +10,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Edit Product: {{$data->title}}</h1>
+                    <h1 class="page-head-line">Edit Packages: {{$data->title}}</h1>
 
 
                 </div>
@@ -18,10 +18,10 @@
             <!-- /. ROW  -->
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    Product Elements
+                    Packages Elements
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="{{route('admin.product.update' ,['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('admin.packages.update' ,['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Parent Category</label>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
-use App\Models\Product;
+use App\Models\Packages;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,18 +14,19 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+
     //
     public function index()
     {
         $page='home';
-        $sliderdata=Product::limit(6)->get();
-        $productlist1=Product::limit(6)->get();
+        $sliderdata=Packages::limit(5)->get();
+        $packageslist1=Packages::limit(5)->get();
         $setting= Setting::first();
        return view('home.index',[
            'page'=>$page,
            'setting'=>$setting,
            'sliderdata'=>$sliderdata,
-           'productlist1'=>$productlist1
+           'packageslist1'=>$packageslist1
        ]);
     }
 
@@ -89,24 +91,24 @@ class HomeController extends Controller
          //dd($request); //Check your values
         $data= new Comment();
         $data->user_id= Auth::id(); //Logged in user id
-        $data->product_id= $request->input('product_id');
+        $data->packages_id= $request->input('packages_id');
         $data->subject= $request->input('subject');
         $data->review= $request->input('review');
         $data->rate= $request->input('rate');
         $data->ip=request()->ip();
         $data->save();
 
-        return redirect()->route('product',['id'=>$request->input('product_id')])->with('success','Your comment has been sent, Thank You.');
+        return redirect()->route('packages',['id'=>$request->input('packages_id')])->with('success','Your comment has been sent, Thank You.');
     }
 
 
-    public function product($id)
+    public function packages($id)
     {
 
-        $data= Product::find($id);
-        $images= DB::table('images')->where('product_id',$id)->get();
-        $reviews=Comment::where('product_id',$id)->where('status','True')->get();
-        return view('home.product',[
+        $data= Packages::find($id);
+        $images= DB::table('images')->where('packages_id',$id)->get();
+        $reviews=Comment::where('packages_id',$id)->where('status','True')->get();
+        return view('home.packages',[
             'data'=>$data,
             'images'=>$images,
             'reviews'=>$reviews

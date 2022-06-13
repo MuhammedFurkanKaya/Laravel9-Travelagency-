@@ -29,8 +29,8 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Product</th>
-                                    <td>{{$data->product->title}}</td>
+                                    <th>Packages</th>
+                                    <td>{{$data->packages->title}}</td>
 
                                 </tr>
 

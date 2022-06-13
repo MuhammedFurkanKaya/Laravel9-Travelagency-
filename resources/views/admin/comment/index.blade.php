@@ -23,8 +23,9 @@
                         <table class="table">
                             <thead>
                             <tr>
+                                <th>Id</th>
+                                <th>Packages</th>
                                 <th>Name</th>
-                                <th>Product</th>
                                 <th>Subject</th>
                                 <th>Review</th>
                                 <th>Rate</th>
@@ -37,7 +38,7 @@
                             @foreach( $data as $rs)
                                 <tr>
                                     <td>{{$rs->id}}</td>
-                                    <td><a href="{{route('admin.product.show',['id'=>$rs->product_id])}}">{{$rs->product->title}}</a></td>
+                                    <td><a href="{{route('admin.packages.show',['id'=>$rs->packages_id])}}">{{$rs->packages->title}}</a></td>
                                     <td>{{$rs->user->name}}</td>
                                     <td>{{$rs->subject}}</td>
                                     <td>{{$rs->review}}</td>
@@ -47,7 +48,7 @@
                                     <td>
                                         <a href="{{route('admin.comment.show' ,['id'=>$rs->id])}}" class="btn btn-sm btn-success"
                                            onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
-                                          Show
+                                            Show
                                         </a>
                                     </td>
                                     <td><a href="{{route('admin.comment.destroy' ,['id'=>$rs->id])}}" class="btn btn-sm btn-danger" onclick="return confirm('Deleting! Are You Sure?')" >Delete</a> </td>

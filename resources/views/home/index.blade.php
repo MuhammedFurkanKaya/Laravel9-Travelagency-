@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="our-listing owl-carousel">
-                @foreach($productlist1 as $rs)
+                @foreach($packageslist1 as $rs)
                 <div class="list-item">
                     <div class="list-thumb">
                         <div class="title">
@@ -22,9 +22,8 @@
                         <img src="{{Storage::url($rs->image)}}" style="width: 270px; height: 200px">
                     </div> <!-- /.list-thumb -->
                     <div class="list-content">
-                        <h5>Rome, Milan, Naples</h5>
-                        <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
-                        <a href="{{route('product',['id'=>$rs->id])}}" class="price-btn">{{$rs->price}}</a>
+
+                        <a href="{{route('packages',['id'=>$rs->id])}}" class="price-btn">{{$rs->price}}</a>
                     </div> <!-- /.list-content -->
                 </div> <!-- /.list-item -->
 
@@ -67,7 +66,7 @@
                     <div class="partner-item last">
                         <img src="{{asset('assets')}}/images/partners/partner3.png" alt="">
                     </div> <!-- /.partner-item -->
-                </div> <!-- /.col-md-2 -->
+                </div><!-- /.col-md-2 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.partner-list -->

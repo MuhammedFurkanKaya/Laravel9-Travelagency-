@@ -46,7 +46,7 @@
             </li>
 
             <li>
-                <a href="/admin/product"><i class="fa fa-ticket "></i>Products</a>
+                <a href="/admin/packages"><i class="fa fa-ticket "></i>Packages</a>
             </li>
             <li>
                 <a href="/admin/comment"><i class="fa fa-comment-o "></i>Comments</a>
