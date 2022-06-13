@@ -116,6 +116,7 @@
                         </div>
                     </div>
                 </div>
+        <a href="{{route('storereservation')}}">Make a Reservation</a>
 <div class="container">
 
     <div class="row">

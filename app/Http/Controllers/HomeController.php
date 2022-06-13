@@ -7,6 +7,7 @@ use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Packages;
+use App\Models\Reservation;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -101,11 +102,57 @@ class HomeController extends Controller
         return redirect()->route('packages',['id'=>$request->input('packages_id')])->with('success','Your comment has been sent, Thank You.');
     }
 
+    public function storereservation()
+    {
+      /*  // dd($request);
+        $data= new Reservation();
+        $data->user_id= Auth::id();
+        $data->packages_id= $request->input('packages_id');
+        $data->start_date= $request->input('start_date');
+        $data->person= $request->input('person');
+        $data->price= $request->input('price');
+        $data->amount= $request->input('amount');
+        $data->note= $request->input('note');
+        $data->ip=request()->ip();
+        $data->save();
+
+        return redirect()->route('packages',['id'=>$request->input('packages_id')])->with('info','Your reservation request has been received, wait for confirmation.');
+    */
+        $setting= Setting::first();
+        return view('home.storereservation',[
+            'setting'=>$setting,
+
+        ]);
+
+    }
+
+    public function storereservationComplate(Request $request){
+        $data= new Reservation();
+        $data->adres= $request->input('adres');
+        $data->telefon= $request->input('telefon');
+        $data->mesaj= $request->input('mesaj');
+        $data->save();
+
+        return redirect()->route('storereservation')->with('info','Your reservation request has been received, wait for confirmation');
+    }
+
 
     public function packages($id)
     {
 
         $data= Packages::find($id);
+        $images= DB::table('images')->where('packages_id',$id)->get();
+        $reviews=Comment::where('packages_id',$id)->where('status','True')->get();
+        return view('home.packages',[
+            'data'=>$data,
+            'images'=>$images,
+            'reviews'=>$reviews
+        ]);
+    }
+    public function reservation($id)
+    {
+
+        $data= Reservation::find($id);
         $images= DB::table('images')->where('packages_id',$id)->get();
         $reviews=Comment::where('packages_id',$id)->where('status','True')->get();
         return view('home.packages',[

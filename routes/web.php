@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AdminPanelFaqController;
 use App\Http\Controllers\AdminPanelHomeController;
 use App\Http\Controllers\AdminPanelMessageController;
+use App\Http\Controllers\AdminPanelReservationController;
 use App\Http\Controllers\AdminPanelUserController;
 use App\Http\Controllers\AdminPackagesController;
 use App\Http\Controllers\HomeController;
@@ -25,11 +26,14 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
+Route::get('/storereservation', [HomeController::class, 'storereservation'])->name('storereservation')->middleware(['auth']);
+Route::post('/storereservation', [HomeController::class, 'storereservationComplate'])->name('storereservationComplate')->middleware(['auth']);
 Route::view('/loginuser','home.login')->name('loginuser');
 Route::view('/registeruser','home.register')->name('registeruser');
 Route::get('/logoutuser',[HomeController::class, 'logout'])->name('logoutuser');
 Route::view('/loginadmin','admin.login')->name('loginadmin');
 Route::post('/loginadmincheck',[HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
+
 
 
 
@@ -44,6 +48,7 @@ Route::get('/test',[HomeController::class, 'test'])->name('test');
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+'])->name('test');
 
 Route::get('/packages/{id}',[HomeController::class,'packages'])->name('packages');
+Route::get('/reservation/{id}',[HomeController::class,'reservation'])->name('reservation');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -97,6 +102,15 @@ Route::get('/', [AdminPanelHomeController::class, 'index'])->name('index');
 
     //*********************** ADMİN MESSAGE ROUTES ************************
     Route::prefix('/message')->name('message.')->controller(AdminPanelMessageController::class)->group(function () {
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+
+    });
+
+    //*********************** ADMİN MESSAGE ROUTES ************************
+    Route::prefix('/reservation')->name('reservation.')->controller(AdminPanelReservationController::class)->group(function () {
         Route::get('/','index')->name('index');
         Route::get('/show/{id}','show')->name('show');
         Route::post('/update/{id}','update')->name('update');
